@@ -1,0 +1,10 @@
+                           !!!!!!START QUIZ!!!!!!
+NAME :-
+ROLL NUMBER :-
+
+INSTRUCTIONS..
+1. There are 10 objective type questions.
+2. Each question has four option out of which only one is correct.
+3. +4 for correct answer,-1 for wrong answer,0 marks for not attempted.
+*4. press 'l' to leave any question.
+

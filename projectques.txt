@@ -1,0 +1,172 @@
+	
+1. What will be the output of the program?
+
+#include<stdio.h>
+#define MAN(x, y) ((x)>(y)) ? (x):(y);
+
+int main()
+{
+    int i=10, j=5, k=0;
+    k = MAN(++i, j++);
+    printf("%d, %d, %d\n", i, j, k);
+    return 0;
+}
+A.	12, 6, 12
+B.	11, 5, 11
+C.	11, 5, Garbage
+D.	12, 6, Garbage ~
+
+	
+2. What will be the output of the program?
+#include<stdio.h>
+#define SQUARE(x) x*x
+
+int main()
+{
+    float s=10, u=30, t=2, a;
+    a = 2*(s-u*t)/SQUARE(t);
+    printf("Result = %f", a);
+    return 0;
+}
+A.	Result = -100.000000
+B.	Result = -25.000000
+C.	Result = 0.000000
+D.	Result = 100.000000 ~
+
+	
+3. What will be the output of the program?
+#include<stdio.h>
+#define SQR(x)(x*x)
+
+int main()
+{
+    int a, b=3;
+    a = SQR(b+2);
+    printf("%d\n", a);
+    return 0;
+}
+A.	25
+B.	11
+C.	Error
+D.	Garbage value ~
+
+	
+4. What will be the output of the program?
+#include<stdio.h>
+#define JOIN(s1, s2) printf("%s=%s %s=%s \n", #s1, s1, #s2, s2);
+int main()
+{
+    char *str1="India";
+    char *str2="BIX";
+    JOIN(str1, str2);
+    return 0;
+}
+A.	str1=IndiaBIX str2=BIX
+B.	str1=India str2=BIX
+C.	str1=India str2=IndiaBIX
+D.	Error: in macro substitution ~
+
+	
+5. What will be the output of the program?
+#include<stdio.h>
+#define CUBE(x) (x*x*x)
+
+int main()
+{
+    int a, b=3;
+    a = CUBE(b++);
+    printf("%d, %d\n", a, b);
+    return 0;
+}
+A.	9, 4
+B.	27, 4
+C.	27, 6
+D.	Error ~
+
+6. What will be the output of the program?
+#include<stdio.h>
+#define PRINT(int) printf("int=%d, ", int);
+
+int main()
+{
+    int x=2, y=3, z=4;   
+    PRINT(x);
+    PRINT(y);
+    PRINT(z);
+    return 0;
+}
+A.	int=2, int=3, int=4
+B.	int=2, int=2, int=2
+C.	int=3, int=3, int=3
+D.	int=4, int=4, int=4 ~
+
+7. What will be the output of the program?
+#include<stdio.h>
+#define SWAP(a, b) int t; t=a, a=b, b=t;
+int main()
+{
+    int a=10, b=12;
+    SWAP(a, b);
+    printf("a = %d, b = %d\n", a, b);
+    return 0;
+}
+A.	a = 10, b = 12
+B.	a = 12, b = 10
+C.	Error: Declaration not allowed in macro
+D.	Error: Undefined symbol 't' ~
+
+	
+8. What will be the output of the program?
+#include<stdio.h>
+#define FUN(i, j) i##j
+
+int main()
+{
+    int va1=10;
+    int va12=20;
+    printf("%d\n", FUN(va1, 2));
+    return 0;
+}
+A.	10
+B.	20
+C.	1020
+D.	12 ~
+
+	
+9. What will be the output of the program?
+#include<stdio.h>
+#define FUN(arg) do\
+                 {\
+                    if(arg)\
+                        printf("IndiaBIX...", "\n");\
+                  }while(--i)
+
+int main()
+{
+    int i=2;
+    FUN(i<3);
+    return 0;
+}
+A.	IndiaBIX...
+IndiaBIX...
+IndiaBIX
+B.	IndiaBIX... IndiaBIX...
+C.	Error: cannot use control instructions in macro
+D.	No output ~
+
+10. 	
+What will be the output of the program?
+#include<stdio.h>
+#define MAX(a, b) (a > b ? a : b)
+
+int main()
+{
+    int x;
+    x = MAX(3+2, 2+7);
+    printf("%d\n", x);
+    return 0;
+}
+A.	8
+B.	9
+C.	6
+D.	5 ~
